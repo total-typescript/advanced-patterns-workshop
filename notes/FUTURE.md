@@ -36,7 +36,7 @@ Ints or Floats
 ✅ Adding to Window
 ✅ Adding to ProcessEnv (with namespaces)
 ✅ Custom global interfaces
-Custom JSX elements (as a challenge)
+✅ Custom JSX elements (as a challenge)
 
 ### 3. Type predicates and assertion functions
 
@@ -45,16 +45,17 @@ Custom JSX elements (as a challenge)
 Assertion functions _inside classes_
 ✅ Fixing the AWFUL asserts error
 ✅ Type predicates with generic inference
-Type predicates WITH branded types
-Assertion functions with branded types
+✅ Type predicates WITH branded types
+✅ Assertion functions with branded types
 
 ### 4. Builder pattern
 
-Global context creator
-Classes which build generics on themselves
-Solving partial inference with currying
-Rebuild jQuery!
+✅ Global context creator
+✅ Solving partial inference with currying
+✅ Classes which build generics on themselves
 Build a reducer
+Rebuild jQuery!
+Middleware?
 
 ### 5. Usage with external libraries
 
