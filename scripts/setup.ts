@@ -13,3 +13,11 @@ global.localStorage = {
     delete storage[key];
   },
 } as Storage;
+
+if (!process) {
+  process = {} as any;
+}
+
+if (!process.env) {
+  process.env = {} as any;
+}

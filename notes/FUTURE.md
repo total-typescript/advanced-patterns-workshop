@@ -22,20 +22,20 @@
 
 ### 1. Branded types
 
-Form validation - email & password
-Branded ids for data fetching (userId vs postId)
-ValidatedCurrency - using brands to figure out complicated payments logic
+✅ Form validation - email & password
+✅ Branded ids for data fetching (userId vs postId)
+✅ ValidatedCurrency - using brands to figure out complicated payments logic
 Cryptographically secure
-Branded objects (for confirmPassword/password validation)
+✅ Branded objects (for confirmPassword/password validation)
 Ints or Floats
-Records with different branded index signatures?
+✅ Records with different branded index signatures?
 
 ### 2. Global types
 
-Adding a function to global scope
-Adding to Window
-Adding to ProcessEnv (with namespaces)
-Custom global interfaces
+✅ Adding a function to global scope
+✅ Adding to Window
+✅ Adding to ProcessEnv (with namespaces)
+✅ Custom global interfaces
 Custom JSX elements (as a challenge)
 
 ### 3. Type predicates and assertion functions
