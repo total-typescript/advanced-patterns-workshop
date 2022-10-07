@@ -64,5 +64,6 @@ it("Should return a request with a user", async () => {
   const result = await middleware.run({ url: "/user/matt" } as Request);
 
   expect(result.user.id).toBe("matt");
-  expect(result.user.name).toBe("John Doe");
+  expect(result.user.firstName).toBe("John");
+  expect(result.user.lastName).toBe("Doe");
 });

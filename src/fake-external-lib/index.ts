@@ -1,2 +1,3 @@
 export * from "./typePredicates";
-export * from "./fetchUser";
+export * from "./fetches";
+export * from "./nonNullable";

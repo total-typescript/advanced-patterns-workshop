@@ -55,15 +55,14 @@ Assertion functions _inside classes_
 ✅ Classes which build generics on themselves
 Build a reducer
 Rebuild jQuery!
-Middleware?
+✅ Middleware?
 
 ### 5. Usage with external libraries
 
 With a simple external library
 Extracting out library types with ReturnType/Parameters
-Understanding namespaces
-Usage with Express
-Usage with Zod
+✅ Usage with Express
+✅ Usage with Zod
 
 ### 6. Identity Functions
 
@@ -76,4 +75,3 @@ satisfies
 ### Unknown bucket
 
 FSM's in TypeScript?
-Schema parser as type predicate (trpc-style)
