@@ -2,7 +2,7 @@
 
 ## Quickstart
 
-Clone this repo or [open in Gitpod](https://gitpod.io/#https://github.com/total-typescript/typescript-generics-tutorial).
+Clone this repo or [open in Gitpod](https://gitpod.io/#https://github.com/total-typescript/advanced-patterns-workshop).
 
 ```sh
 # Installs all dependencies
