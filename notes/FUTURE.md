@@ -60,17 +60,19 @@ Rebuild jQuery!
 ### 5. Usage with external libraries
 
 With a simple external library
-Extracting out library types with ReturnType/Parameters
+✅ Extracting out library types with ReturnType/Parameters
 ✅ Usage with Express
 ✅ Usage with Zod
 
 ### 6. Identity Functions
 
-No generics on objects!
-F.Narrow vs as const
+✅ No generics on objects!
+✅ F.Narrow vs as const
 F.NoInfer
-Custom satisfies
-satisfies
+
+<!-- satisfies -->
+
+<!-- Custom satisfies -->
 
 ### Unknown bucket
 

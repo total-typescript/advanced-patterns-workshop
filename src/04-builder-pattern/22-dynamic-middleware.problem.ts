@@ -18,6 +18,7 @@ class DynamicMiddleware<TInput, TOutput> {
     this.middleware.push(firstMiddleware);
   }
 
+  // Clue: you'll need to make changes here!
   use(middleware: Middleware<TInput, TOutput>) {
     this.middleware.push(middleware);
 
