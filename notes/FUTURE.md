@@ -53,24 +53,32 @@ Assertion functions _inside classes_
 ✅ Global context creator
 ✅ Solving partial inference with currying
 ✅ Classes which build generics on themselves
-Build a reducer
-Rebuild jQuery!
+✅ Importance of default generics
 ✅ Middleware?
 
 ### 5. Usage with external libraries
 
 With a simple external library
-Extracting out library types with ReturnType/Parameters
+With a non-generic external library
+✅ Extracting out library types with ReturnType/Parameters
 ✅ Usage with Express
 ✅ Usage with Zod
 
 ### 6. Identity Functions
 
-No generics on objects!
-F.Narrow vs as const
-F.NoInfer
-Custom satisfies
-satisfies
+✅ No generics on objects!
+✅ F.Narrow vs as const
+✅ F.NoInfer
+✅ Lodash (MAYBE REVISIT AND ADD COMPLEXITY)
+
+<!-- satisfies -->
+
+<!-- Custom satisfies -->
+
+### 7. Challenges
+
+Build a reducer
+Rebuild jQuery!
 
 ### Unknown bucket
 
