@@ -2,6 +2,9 @@
 
 /**
  * Clue: F.NoInfer is part of the solution!
+ *
+ * You'll need to modify the interface below
+ * to get it to work.
  */
 interface FSMConfig<TState extends string> {
   initial: TState;
@@ -14,7 +17,7 @@ interface FSMConfig<TState extends string> {
 }
 
 export const makeFiniteStateMachine = <TState extends string>(
-  config: FSMConfig<TState>,
+  config: FSMConfig<TState>
 ) => config;
 
 const config = makeFiniteStateMachine({

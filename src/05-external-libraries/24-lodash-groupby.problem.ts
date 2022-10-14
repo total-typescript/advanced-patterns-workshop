@@ -2,6 +2,14 @@ import _ from "lodash";
 import { expect, it } from "vitest";
 import { doNotExecute, Equal, Expect } from "../helpers/type-utils";
 
+/**
+ * We've made a reusable function here to group
+ * arrays of objects by age. I want you to:
+ *
+ * 1. Make sure that the errors (below) disappear
+ * 2. Take a look at the typings for _.groupBy to
+ * see if you can understand them.
+ */
 const groupByAge = (array: unknown[]) => {
   const grouped = _.groupBy(array, "age");
 
@@ -44,7 +52,7 @@ it("Should group the items by age", () => {
   });
 
   type tests = [
-    Expect<Equal<typeof result, _.Dictionary<{ name: string; age: number }[]>>>,
+    Expect<Equal<typeof result, _.Dictionary<{ name: string; age: number }[]>>>
   ];
 });
 

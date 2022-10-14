@@ -2,9 +2,12 @@ import { F } from "ts-toolbelt";
 import { it } from "vitest";
 import { Equal, Expect } from "../helpers/type-utils";
 
-export const narrowFruits = <TFruits extends { name: string; price: number }[]>(
-  t: F.Narrow<TFruits>,
-) => t;
+/**
+ * We know that asConst works, but we now also want to be
+ * able to narrow the type to only allow an array
+ * of fruits.
+ */
+export const narrowFruits = <TFruits>(t: TFruits) => t;
 
 const fruits = narrowFruits([
   {
@@ -29,10 +32,10 @@ type tests = [
         {
           name: "banana";
           price: 2;
-        },
+        }
       ]
     >
-  >,
+  >
 ];
 
 it("Should ONLY let you pass an array of fruits", () => {
