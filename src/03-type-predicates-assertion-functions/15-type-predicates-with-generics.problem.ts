@@ -2,6 +2,10 @@ import { isBodyElement, isDivElement } from "fake-external-lib";
 import { it } from "vitest";
 import { Equal, Expect } from "../helpers/type-utils";
 
+/**
+ * By changing the type definition of this interface,
+ * you can fix all the errors below.
+ */
 interface DOMNodeExtractorConfig<T, Result> {
   isNode: (node: unknown) => boolean;
   transform: (node: T) => Result;

@@ -8,6 +8,9 @@ interface PasswordValues {
   confirmPassword: string;
 }
 
+/**
+ * 💡 You'll need to change this function...
+ */
 const isValidPassword = (values: PasswordValues) => {
   if (values.password !== values.confirmPassword) {
     return false;

@@ -3,6 +3,10 @@ import { it } from "vitest";
 import { Equal, Expect } from "../helpers/type-utils";
 
 interface DOMNodeExtractorConfig<T, Result> {
+  /**
+   * Here, node is T lets you specify that
+   * isNode takes in a type predicate.
+   */
   isNode: (node: unknown) => node is T;
   transform: (node: T) => Result;
 }
