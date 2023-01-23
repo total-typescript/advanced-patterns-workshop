@@ -1,6 +1,6 @@
 import { CSSProperties } from "react";
 
-const makeUseStyled = <TTheme>() => {
+const makeUseStyled = <TTheme = {}>() => {
   const useStyled = (func: (theme: TTheme) => CSSProperties) => {
     // Imagine that this function hooks into a global theme
     // and returns the CSSProperties
