@@ -5,12 +5,12 @@ type UserId = Brand<string, "UserId">;
 type PostId = Brand<string, "PostId">;
 
 interface User {
-  id: UserId;
+  id: string;
   name: string;
 }
 
 interface Post {
-  id: PostId;
+  id: string;
   title: string;
   content: string;
 }
@@ -18,13 +18,13 @@ interface Post {
 const db: { users: User[]; posts: Post[] } = {
   users: [
     {
-      id: "1" as UserId,
+      id: "1",
       name: "Miles",
     },
   ],
   posts: [
     {
-      id: "1" as PostId,
+      id: "1",
       title: "Hello world",
       content: "This is my first post",
     },
