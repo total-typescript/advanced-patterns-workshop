@@ -19,4 +19,5 @@ const handler = (event: UnionOfDispatchableEvents) => {
 
 it("Should be able to handle LOG_OUT and UPDATE_USERNAME events", () => {
   handler({ type: "LOG_OUT" });
+  handler({ type: "UPDATE_USERNAME", username: "matt" });
 });
