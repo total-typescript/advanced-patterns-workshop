@@ -15,10 +15,6 @@ interface NormalUser extends User {
   role: "normal";
 }
 
-/**
- * Clue - check the docs on assertion functions:
- * https://www.typescriptlang.org/docs/handbook/release-notes/typescript-3-7.html#assertion-functions
- */
 function assertUserIsAdmin(user: NormalUser | AdminUser) {
   if (user.role !== "admin") {
     throw new Error("Not an admin user");
