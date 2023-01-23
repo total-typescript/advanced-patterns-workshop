@@ -1,9 +1,9 @@
 import { Equal, Expect } from "../helpers/type-utils";
 
 export const makeSelectors =
-  <TSource>() =>
+  <TSource = "Type argument expected in makeSelectors">() =>
   <TSelectors extends Record<string, (source: TSource) => any>>(
-    selectors: TSelectors,
+    selectors: TSelectors
   ) => {
     return selectors;
   };
@@ -28,5 +28,5 @@ type tests = [
   >,
   Expect<
     Equal<typeof selectors["getFirstNameLength"], (source: Source) => number>
-  >,
+  >
 ];
