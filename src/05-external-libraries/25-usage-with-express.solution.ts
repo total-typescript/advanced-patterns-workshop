@@ -15,9 +15,6 @@ const makeTypeSafeGet =
   ) =>
   (req: Request<any, any, any, TQuery>, res: Response, next: NextFunction) => {
     try {
-      /**
-       * Try removing the 'as' cast below and see what happens.
-       */
       parser(req.query);
     } catch (e) {
       res.status(400).send("Invalid query: " + (e as Error).message);
