@@ -1,21 +1,16 @@
 import { expect, it } from "vitest";
 import { z } from "zod";
 
-const makeZodSafeFunction = <TSchema extends z.ZodType, TResult>(
-  schema: TSchema,
-  func: (arg: TSchema["_type"]) => TResult,
+const makeZodSafeFunction = <TValue, TResult>(
+  schema: z.Schema<TValue>,
+  func: (arg: TValue) => TResult
 ) => {
-  return (arg: TSchema["_type"]) => {
+  return (arg: TValue) => {
     const result = schema.parse(arg);
     return func(result);
   };
 };
 
-/**
- * You should be able to edit the object below,
- * and see the args inside the makeZodSafeFunction
- * call change.
- */
 const addTwoNumbersArg = z.object({
   a: z.number(),
   b: z.number(),
@@ -23,16 +18,15 @@ const addTwoNumbersArg = z.object({
 
 const addTwoNumbers = makeZodSafeFunction(
   addTwoNumbersArg,
-  (args) => args.a + args.b,
-  // ^ 🕵️‍♂️
+  (args) => args.a + args.b
 );
 
 it("Should error on the type level AND the runtime if you pass incorrect params", () => {
   expect(() =>
     addTwoNumbers(
       // @ts-expect-error
-      { a: 1, badParam: 3 },
-    ),
+      { a: 1, badParam: 3 }
+    )
   ).toThrow();
 });
 
