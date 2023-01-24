@@ -8,21 +8,19 @@ import { Equal, Expect } from "../helpers/type-utils";
 
 const app = express();
 
-type Params = Record<string, string>;
-
 const makeTypeSafeGet =
-  <TParams extends Params>(
-    parser: (params: Params) => TParams,
-    handler: RequestHandler<TParams>,
+  <TQuery extends Request["query"]>(
+    parser: (queryParams: Request["query"]) => TQuery,
+    handler: RequestHandler<any, any, any, TQuery>
   ) =>
-  (req: Request<TParams>, res: Response, next: NextFunction) => {
+  (req: Request<any, any, any, TQuery>, res: Response, next: NextFunction) => {
     try {
       /**
        * Try removing the 'as' cast below and see what happens.
        */
-      parser(req.params);
+      parser(req.query);
     } catch (e) {
-      res.status(400).send("Invalid params: " + (e as Error).message);
+      res.status(400).send("Invalid query: " + (e as Error).message);
       return;
     }
 
@@ -30,25 +28,25 @@ const makeTypeSafeGet =
   };
 
 const getUser = makeTypeSafeGet(
-  (params) => {
-    if (typeof params.id !== "string") {
+  (query) => {
+    if (typeof query.id !== "string") {
       throw new Error("You must pass an id");
     }
 
     return {
-      id: params.id,
+      id: query.id,
     };
   },
   (req, res) => {
-    // req.params should be EXACTLY the type returned from
+    // req.query should be EXACTLY the type returned from
     // the parser above
-    type tests = [Expect<Equal<typeof req.params, { id: string }>>];
+    type tests = [Expect<Equal<typeof req.query, { id: string }>>];
 
     res.json({
-      id: req.params.id,
+      id: req.query.id,
       name: "Matt",
     });
-  },
+  }
 );
 
 app.get("/user", getUser);
