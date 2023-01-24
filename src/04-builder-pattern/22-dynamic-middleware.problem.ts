@@ -1,7 +1,9 @@
 import { expect, it } from "vitest";
 import { fetchUser } from "fake-external-lib";
 
-type Middleware<TInput, TOutput> = (input: TInput) => TOutput;
+type Middleware<TInput, TOutput> = (
+  input: TInput
+) => TOutput | Promise<TOutput>;
 
 /**
  * In this problem, we need to type the return type of the use()
@@ -19,7 +21,7 @@ class DynamicMiddleware<TInput, TOutput> {
   }
 
   // Clue: you'll need to make changes here!
-  use(middleware: Middleware<TInput, TOutput>) {
+  use(middleware: Middleware<TInput, TOutput>): unknown {
     this.middleware.push(middleware);
 
     return this as any;
