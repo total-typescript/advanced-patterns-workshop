@@ -1,3 +1,5 @@
-// Explain zod's types
+import { z } from "zod";
 
-export {};
+type Example = z.ZodType;
+
+const transformer = z.string().transform((s) => Number(s));
