@@ -1,3 +1,3 @@
-// Explain zod's types
+// Explain express's types
 
 export {};
