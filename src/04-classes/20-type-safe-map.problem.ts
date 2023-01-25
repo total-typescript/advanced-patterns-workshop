@@ -4,13 +4,7 @@ import { expect, it } from "vitest";
  * In this problem, we need to type the return type of the set()
  * method to make it add keys to the TMap generic.
  *
- * Clues:
- *
- * 1. Classes can be in positions where types usually belong:
- *
- * set(): TypeSafeStringMap<unknown>;
- *
- * 2. In the return type of set(), we'll need to modify the TMap
+ * In the return type of set(), we'll need to modify the TMap
  * generic to add the new key/value pair.
  */
 
