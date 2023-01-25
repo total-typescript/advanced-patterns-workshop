@@ -1,3 +1,9 @@
-// Explain express's types
+import express from "express";
 
-export {};
+const app = express();
+
+app.get("/user", (req, res) => {
+  res.send("Hello");
+});
+
+app.listen(3000);
