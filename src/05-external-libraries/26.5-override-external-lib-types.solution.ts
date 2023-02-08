@@ -9,5 +9,5 @@ type tests = [
       typeof animatingState,
       "before-animation" | "animating" | "after-animation"
     >
-  >,
+  >
 ];

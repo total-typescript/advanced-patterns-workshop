@@ -1,6 +1,7 @@
 declare module "fake-animation-lib-solution" {
-  export function getAnimatingState():
+  export type AnimatingState =
     | "before-animation"
     | "animating"
     | "after-animation";
+  export function getAnimatingState(): AnimatingState;
 }
