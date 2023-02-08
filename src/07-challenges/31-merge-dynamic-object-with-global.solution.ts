@@ -10,9 +10,9 @@ const addAllOfThisToWindow = {
 Object.assign(window, addAllOfThisToWindow);
 
 declare global {
-  type AddAllOfThisToWindowSolution = typeof addAllOfThisToWindow;
+  type StuffToAdd = typeof addAllOfThisToWindow;
 
-  interface Window extends AddAllOfThisToWindowSolution {}
+  interface Window extends StuffToAdd {}
 }
 
 type tests = [
