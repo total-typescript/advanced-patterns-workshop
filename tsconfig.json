@@ -33,6 +33,12 @@
     "paths": {
       "fake-external-lib": [
         "./src/fake-external-lib/index"
+      ],
+      "fake-animation-lib": [
+        "./src/fake-animation-lib/index"
+      ],
+      "fake-animation-lib-solution": [
+        "./src/fake-animation-lib/index"
       ]
     }, /* Specify a set of entries that re-map imports to additional lookup locations. */
     // "rootDirs": [],                                   /* Allow multiple folders to be treated as one when resolving modules. */

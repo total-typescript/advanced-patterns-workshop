@@ -1,4 +1,4 @@
-import { getAnimatingState } from "../fake-animation-lib";
+import { getAnimatingState } from "fake-animation-lib-solution";
 import { Equal, Expect } from "../helpers/type-utils";
 
 const animatingState = getAnimatingState();
