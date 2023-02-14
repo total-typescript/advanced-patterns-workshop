@@ -5,16 +5,16 @@ import { Equal, Expect } from "../helpers/type-utils";
 
 const makeTypeSafeHandler = (
   config: {
-    params?: unknown;
-    body?: unknown;
+    query?: z.Schema;
+    body?: z.Schema;
   },
-  handler: unknown,
-): unknown => {
+  handler: RequestHandler
+): RequestHandler => {
   return (req, res, next) => {
-    const { params, body } = req;
-    if (config.params) {
+    const { query, body } = req;
+    if (config.query) {
       try {
-        config.params.parse(params);
+        config.query.parse(query);
       } catch (e) {
         return res.status(400).send((e as ZodError).message);
       }
@@ -32,12 +32,12 @@ const makeTypeSafeHandler = (
 
 const app = express();
 
-it("Should make the params AND body type safe", () => {
+it("Should make the query AND body type safe", () => {
   app.get(
     "/users",
     makeTypeSafeHandler(
       {
-        params: z.object({
+        query: z.object({
           id: z.string(),
         }),
         body: z.object({
@@ -46,11 +46,11 @@ it("Should make the params AND body type safe", () => {
       },
       (req, res) => {
         type tests = [
-          Expect<Equal<typeof req.params, { id: string }>>,
-          Expect<Equal<typeof req.body, { name: string }>>,
+          Expect<Equal<typeof req.query, { id: string }>>,
+          Expect<Equal<typeof req.body, { name: string }>>
         ];
-      },
-    ),
+      }
+    )
   );
 });
 
@@ -59,9 +59,9 @@ it("Should default them to any if not passed in config", () => {
     "/users",
     makeTypeSafeHandler({}, (req, res) => {
       type tests = [
-        Expect<Equal<typeof req.params, any>>,
-        Expect<Equal<typeof req.body, any>>,
+        Expect<Equal<typeof req.query, any>>,
+        Expect<Equal<typeof req.body, any>>
       ];
-    }),
+    })
   );
 });
