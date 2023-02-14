@@ -2,10 +2,11 @@ import express, { RequestHandler } from "express";
 import { it } from "vitest";
 import { z, ZodError } from "zod";
 import { Equal, Expect } from "../helpers/type-utils";
+import { ParsedQs } from "qs";
 
 const makeTypeSafeHandler = <
-  TQuery extends Record<string, string> = any,
-  TBody extends Record<string, string> = any
+  TQuery extends ParsedQs = any,
+  TBody extends Record<string, any> = any
 >(
   config: {
     query?: z.Schema<TQuery>;
