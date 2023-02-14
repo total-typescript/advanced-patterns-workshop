@@ -1,23 +1,23 @@
 import { expect, it } from "vitest";
 import { Equal, Expect } from "../helpers/type-utils";
 
-type HandlersToDiscriminatedUnion<T extends Record<string, any>> = {
+type PayloadsToDiscriminatedUnion<T extends Record<string, any>> = {
   [K in keyof T]: { type: K } & T[K];
 }[keyof T];
 
 export class DynamicReducer<
   TState,
-  THandlers extends Record<string, any> = {},
+  TPayloadMap extends Record<string, any> = {}
 > {
   private handlers = {} as Record<
     string,
-    (state: TState, action: HandlersToDiscriminatedUnion<THandlers>) => TState
+    (state: TState, payload: any) => TState
   >;
 
-  addHandler<TType extends string, TPayload>(
+  addHandler<TType extends string, TPayload extends object>(
     type: TType,
-    handler: (state: TState, payload: TPayload) => TState,
-  ): DynamicReducer<TState, THandlers & Record<TType, TPayload>> {
+    handler: (state: TState, payload: TPayload) => TState
+  ): DynamicReducer<TState, TPayloadMap & Record<TType, TPayload>> {
     this.handlers[type] = handler;
 
     return this;
@@ -25,7 +25,7 @@ export class DynamicReducer<
 
   reduce(
     state: TState,
-    action: HandlersToDiscriminatedUnion<THandlers>,
+    action: PayloadsToDiscriminatedUnion<TPayloadMap>
   ): TState {
     const handler = this.handlers[action.type];
     if (!handler) {
@@ -49,19 +49,28 @@ const reducer = new DynamicReducer<State>()
         username: action.username,
         password: action.password,
       };
-    },
+    }
   )
   .addHandler("LOG_OUT", () => {
     return {
       username: "",
       password: "",
     };
+  })
+  .addHandler("UPDATE_USERNAME", (state, action: { username: string }) => {
+    return {
+      ...state,
+      username: action.username,
+    };
   });
 
 it("Should return the new state after LOG_IN", () => {
   const state = reducer.reduce(
     { username: "", password: "" },
-    { type: "LOG_IN", username: "foo", password: "bar" },
+    {
+      type: "UPDATE_USERNAME",
+      username: "awdawdawd",
+    }
   );
 
   type test = [Expect<Equal<typeof state, State>>];
@@ -72,7 +81,7 @@ it("Should return the new state after LOG_IN", () => {
 it("Should return the new state after LOG_OUT", () => {
   const state = reducer.reduce(
     { username: "foo", password: "bar" },
-    { type: "LOG_OUT" },
+    { type: "LOG_OUT" }
   );
 
   type test = [Expect<Equal<typeof state, State>>];
@@ -86,7 +95,7 @@ it("Should error if you pass it an incorrect action", () => {
     {
       // @ts-expect-error
       type: "NOT_ALLOWED",
-    },
+    }
   );
 });
 
@@ -96,6 +105,6 @@ it("Should error if you pass an incorrect payload", () => {
     // @ts-expect-error
     {
       type: "LOG_IN",
-    },
+    }
   );
 });

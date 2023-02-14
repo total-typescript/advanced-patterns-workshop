@@ -2,7 +2,7 @@ import { expect, it } from "vitest";
 import { Equal, Expect } from "../helpers/type-utils";
 
 // Clue - this will be needed!
-type HandlersToDiscriminatedUnion<T extends Record<string, any>> = {
+type PayloadsToDiscriminatedUnion<T extends Record<string, any>> = {
   [K in keyof T]: { type: K } & T[K];
 }[keyof T];
 
@@ -12,7 +12,7 @@ type HandlersToDiscriminatedUnion<T extends Record<string, any>> = {
  * | { type: "LOG_IN", username: string, password: string }
  * | { type: "LOG_OUT" }
  */
-type TestingHandlersToDiscriminatedUnion = HandlersToDiscriminatedUnion<{
+type TestingPayloadsToDiscriminatedUnion = PayloadsToDiscriminatedUnion<{
   LOG_IN: { username: string; password: string };
   LOG_OUT: {};
 }>;
@@ -27,7 +27,7 @@ export class DynamicReducer {
 
   addHandler(
     type: unknown,
-    handler: (state: unknown, payload: unknown) => unknown,
+    handler: (state: unknown, payload: unknown) => unknown
   ): unknown {
     this.handlers[type] = handler;
 
@@ -57,7 +57,7 @@ const reducer = new DynamicReducer<State>()
         username: action.username,
         password: action.password,
       };
-    },
+    }
   )
   .addHandler("LOG_OUT", () => {
     return {
@@ -69,7 +69,7 @@ const reducer = new DynamicReducer<State>()
 it("Should return the new state after LOG_IN", () => {
   const state = reducer.reduce(
     { username: "", password: "" },
-    { type: "LOG_IN", username: "foo", password: "bar" },
+    { type: "LOG_IN", username: "foo", password: "bar" }
   );
 
   type test = [Expect<Equal<typeof state, State>>];
@@ -80,7 +80,7 @@ it("Should return the new state after LOG_IN", () => {
 it("Should return the new state after LOG_OUT", () => {
   const state = reducer.reduce(
     { username: "foo", password: "bar" },
-    { type: "LOG_OUT" },
+    { type: "LOG_OUT" }
   );
 
   type test = [Expect<Equal<typeof state, State>>];
@@ -94,7 +94,7 @@ it("Should error if you pass it an incorrect action", () => {
     {
       // @ts-expect-error
       type: "NOT_ALLOWED",
-    },
+    }
   );
 });
 
@@ -104,6 +104,6 @@ it("Should error if you pass an incorrect payload", () => {
     // @ts-expect-error
     {
       type: "LOG_IN",
-    },
+    }
   );
 });
