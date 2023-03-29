@@ -1,8 +1,13 @@
 import { it } from "vitest";
 import { Equal, Expect } from "../helpers/type-utils";
 
-export const narrowFruits = <const TFruits extends readonly { name: string; price: number }[]>(
-  t: TFruits,
+type FruitsConstraint = readonly {
+  name: string;
+  price: number;
+}[];
+
+export const narrowFruits = <const TFruits extends FruitsConstraint>(
+  t: TFruits
 ) => t;
 
 const fruits = narrowFruits([
@@ -28,10 +33,10 @@ type tests = [
         {
           readonly name: "banana";
           readonly price: 2;
-        },
+        }
       ]
     >
-  >,
+  >
 ];
 
 it("Should ONLY let you pass an array of fruits", () => {
