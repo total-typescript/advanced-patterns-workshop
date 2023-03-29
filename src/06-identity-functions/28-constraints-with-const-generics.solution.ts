@@ -1,9 +1,8 @@
-import { F } from "ts-toolbelt";
 import { it } from "vitest";
 import { Equal, Expect } from "../helpers/type-utils";
 
-export const narrowFruits = <TFruits extends { name: string; price: number }[]>(
-  t: F.Narrow<TFruits>,
+export const narrowFruits = <const TFruits extends readonly { name: string; price: number }[]>(
+  t: TFruits,
 ) => t;
 
 const fruits = narrowFruits([
@@ -21,14 +20,14 @@ type tests = [
   Expect<
     Equal<
       typeof fruits,
-      [
+      readonly [
         {
-          name: "apple";
-          price: 1;
+          readonly name: "apple";
+          readonly price: 1;
         },
         {
-          name: "banana";
-          price: 2;
+          readonly name: "banana";
+          readonly price: 2;
         },
       ]
     >
