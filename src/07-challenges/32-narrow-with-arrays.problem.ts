@@ -6,7 +6,7 @@ interface Fruit {
 }
 
 export const wrapFruit = (fruits: unknown[]) => {
-  const getFruit = (name: unknown): unknown => {
+  const getFruit = (name: unknown) => {
     return fruits.find((fruit) => fruit.name === name);
   };
 
@@ -32,6 +32,6 @@ const apple = fruits.getFruit("apple");
 const notAllowed = fruits.getFruit("not-allowed");
 
 type tests = [
-  Expect<Equal<typeof apple, { name: "apple"; price: 1 }>>,
-  Expect<Equal<typeof banana, { name: "banana"; price: 2 }>>,
+  Expect<Equal<typeof apple, { readonly name: "apple"; readonly price: 1 }>>,
+  Expect<Equal<typeof banana, { readonly name: "banana"; readonly price: 2 }>>
 ];

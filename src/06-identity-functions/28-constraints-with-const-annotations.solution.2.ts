@@ -1,13 +1,14 @@
-import { F } from "ts-toolbelt";
 import { it } from "vitest";
 import { Equal, Expect } from "../helpers/type-utils";
 
-/**
- * We know that asConst works, but we now also want to be
- * able to narrow the type to only allow an array
- * of fruits.
- */
-export const narrowFruits = <TFruits>(t: TFruits) => t;
+export const narrowFruits = <
+  const TFruits extends ReadonlyArray<{
+    name: string;
+    price: number;
+  }>
+>(
+  t: TFruits
+) => t;
 
 const fruits = narrowFruits([
   {
@@ -24,14 +25,14 @@ type tests = [
   Expect<
     Equal<
       typeof fruits,
-      [
+      readonly [
         {
-          name: "apple";
-          price: 1;
+          readonly name: "apple";
+          readonly price: 1;
         },
         {
-          name: "banana";
-          price: 2;
+          readonly name: "banana";
+          readonly price: 2;
         }
       ]
     >

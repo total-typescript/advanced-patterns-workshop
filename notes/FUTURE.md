@@ -67,7 +67,6 @@ With a non-generic external library
 ### 6. Identity Functions
 
 ✅ No generics on objects!
-✅ F.Narrow vs as const
 ✅ F.NoInfer
 ✅ Lodash (MAYBE REVISIT AND ADD COMPLEXITY)
 
