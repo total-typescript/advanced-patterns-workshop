@@ -5,7 +5,9 @@ interface Fruit {
   price: number;
 }
 
-export const wrapFruit = <const TFruits extends readonly Fruit[]>(fruits: TFruits) => {
+export const wrapFruit = <const TFruits extends readonly Fruit[]>(
+  fruits: TFruits,
+) => {
   const getFruit = <TName extends TFruits[number]["name"]>(name: TName) => {
     return fruits.find((fruit) => fruit.name === name) as Extract<
       TFruits[number],
@@ -36,5 +38,5 @@ const notAllowed = fruits.getFruit("not-allowed");
 
 type tests = [
   Expect<Equal<typeof apple, { readonly name: "apple"; readonly price: 1 }>>,
-  Expect<Equal<typeof banana, { readonly name: "banana"; readonly price: 2 }>>
+  Expect<Equal<typeof banana, { readonly name: "banana"; readonly price: 2 }>>,
 ];
