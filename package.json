@@ -9,14 +9,17 @@
     "chokidar": "^3.5.3",
     "cross-fetch": "^3.1.5",
     "prettier": "^2.8.7",
-    "typescript": "^5.0.2",
-    "vitest": "^0.21.1"
+    "typescript": "^5.0.3",
+    "vitest": "^0.29.8",
+    "jsdom": "^21.1.1"
   },
   "scripts": {
     "exercise": "node scripts/exercise.js",
     "e": "npm run exercise",
     "solution": "cross-env SOLUTION=true node scripts/exercise.js",
     "s": "npm run solution",
+    "ci": "(cd scripts/tests && npx vitest run)",
+    "update-snapshots": "(cd scripts/tests && npx vitest run -u)",
     "prepare": "node ./scripts/prepare-stackblitz.js",
     "e-02": "npm run exercise -- 02",
     "s-02": "npm run solution -- 02",
