@@ -829,14 +829,52 @@ exports[`vitest > Should have the correct Vitest errors 1`] = `
       "status": "passed",
     },
     {
-      "assertionResults": [],
-      "message": "[vite-node] Failed to load \\"fake-external-lib\\" imported from /Users/matt/repos/ts/advanced-patterns-workshop/src/03-type-predicates-assertion-functions/15-type-predicates-with-generics.problem.ts",
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "",
+          ],
+          "failureMessages": [],
+          "fullName": " Should pick up that \\"extractDivs\\" is of type \\"HTMLDivElement[]\\"",
+          "status": "passed",
+          "title": "Should pick up that \\"extractDivs\\" is of type \\"HTMLDivElement[]\\"",
+        },
+        {
+          "ancestorTitles": [
+            "",
+          ],
+          "failureMessages": [],
+          "fullName": " Should pick up that \\"extractBodies\\" is of type \\"HTMLBodyElement[]\\"",
+          "status": "passed",
+          "title": "Should pick up that \\"extractBodies\\" is of type \\"HTMLBodyElement[]\\"",
+        },
+      ],
+      "message": "",
       "name": "src/03-type-predicates-assertion-functions/15-type-predicates-with-generics.problem.ts",
       "status": "passed",
     },
     {
-      "assertionResults": [],
-      "message": "[vite-node] Failed to load \\"fake-external-lib\\" imported from /Users/matt/repos/ts/advanced-patterns-workshop/src/03-type-predicates-assertion-functions/15-type-predicates-with-generics.solution.ts",
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "",
+          ],
+          "failureMessages": [],
+          "fullName": " Should pick up that \\"extractDivs\\" is of type \\"HTMLDivElement[]\\"",
+          "status": "passed",
+          "title": "Should pick up that \\"extractDivs\\" is of type \\"HTMLDivElement[]\\"",
+        },
+        {
+          "ancestorTitles": [
+            "",
+          ],
+          "failureMessages": [],
+          "fullName": " Should pick up that \\"extractBodies\\" is of type \\"HTMLBodyElement[]\\"",
+          "status": "passed",
+          "title": "Should pick up that \\"extractBodies\\" is of type \\"HTMLBodyElement[]\\"",
+        },
+      ],
+      "message": "",
       "name": "src/03-type-predicates-assertion-functions/15-type-predicates-with-generics.solution.ts",
       "status": "passed",
     },
@@ -1089,14 +1127,52 @@ exports[`vitest > Should have the correct Vitest errors 1`] = `
       "status": "passed",
     },
     {
-      "assertionResults": [],
-      "message": "[vite-node] Failed to load \\"fake-external-lib\\" imported from /Users/matt/repos/ts/advanced-patterns-workshop/src/04-classes/22-dynamic-middleware.problem.ts",
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "",
+          ],
+          "failureMessages": [],
+          "fullName": " Should fail if the user id is 123",
+          "status": "passed",
+          "title": "Should fail if the user id is 123",
+        },
+        {
+          "ancestorTitles": [
+            "",
+          ],
+          "failureMessages": [],
+          "fullName": " Should return a request with a user",
+          "status": "passed",
+          "title": "Should return a request with a user",
+        },
+      ],
+      "message": "",
       "name": "src/04-classes/22-dynamic-middleware.problem.ts",
       "status": "passed",
     },
     {
-      "assertionResults": [],
-      "message": "[vite-node] Failed to load \\"fake-external-lib\\" imported from /Users/matt/repos/ts/advanced-patterns-workshop/src/04-classes/22-dynamic-middleware.solution.ts",
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "",
+          ],
+          "failureMessages": [],
+          "fullName": " Should fail if the user id is 123",
+          "status": "passed",
+          "title": "Should fail if the user id is 123",
+        },
+        {
+          "ancestorTitles": [
+            "",
+          ],
+          "failureMessages": [],
+          "fullName": " Should return a request with a user",
+          "status": "passed",
+          "title": "Should return a request with a user",
+        },
+      ],
+      "message": "",
       "name": "src/04-classes/22-dynamic-middleware.solution.ts",
       "status": "passed",
     },
@@ -1114,13 +1190,13 @@ exports[`vitest > Should have the correct Vitest errors 1`] = `
     },
     {
       "assertionResults": [],
-      "message": "[vite-node] Failed to load \\"fake-external-lib\\" imported from /Users/matt/repos/ts/advanced-patterns-workshop/src/05-external-libraries/23-extract-external-lib-types.problem.ts",
+      "message": "No test found in suite src/05-external-libraries/23-extract-external-lib-types.problem.ts",
       "name": "src/05-external-libraries/23-extract-external-lib-types.problem.ts",
       "status": "passed",
     },
     {
       "assertionResults": [],
-      "message": "[vite-node] Failed to load \\"fake-external-lib\\" imported from /Users/matt/repos/ts/advanced-patterns-workshop/src/05-external-libraries/23-extract-external-lib-types.solution.ts",
+      "message": "No test found in suite src/05-external-libraries/23-extract-external-lib-types.solution.ts",
       "name": "src/05-external-libraries/23-extract-external-lib-types.solution.ts",
       "status": "passed",
     },
@@ -1287,13 +1363,13 @@ exports[`vitest > Should have the correct Vitest errors 1`] = `
     },
     {
       "assertionResults": [],
-      "message": "[vite-node] Failed to load \\"fake-animation-lib\\" imported from /Users/matt/repos/ts/advanced-patterns-workshop/src/05-external-libraries/26.5-override-external-lib-types.problem.ts",
+      "message": "No test found in suite src/05-external-libraries/26.5-override-external-lib-types.problem.ts",
       "name": "src/05-external-libraries/26.5-override-external-lib-types.problem.ts",
       "status": "passed",
     },
     {
       "assertionResults": [],
-      "message": "[vite-node] Failed to load \\"fake-animation-lib-solution\\" imported from /Users/matt/repos/ts/advanced-patterns-workshop/src/05-external-libraries/26.5-override-external-lib-types.solution.ts",
+      "message": "No test found in suite src/05-external-libraries/26.5-override-external-lib-types.solution.ts",
       "name": "src/05-external-libraries/26.5-override-external-lib-types.solution.ts",
       "status": "passed",
     },
@@ -1554,48 +1630,6 @@ exports[`vitest > Should have the correct Vitest errors 1`] = `
       "message": "",
       "name": "src/07-challenges/34-dynamic-reducer.solution.ts",
       "status": "failed",
-    },
-    {
-      "assertionResults": [],
-      "message": "No test found in suite src/fake-animation-lib/index.ts",
-      "name": "src/fake-animation-lib/index.ts",
-      "status": "passed",
-    },
-    {
-      "assertionResults": [],
-      "message": "No test found in suite src/fake-external-lib/fetches.ts",
-      "name": "src/fake-external-lib/fetches.ts",
-      "status": "passed",
-    },
-    {
-      "assertionResults": [],
-      "message": "No test found in suite src/fake-external-lib/index.ts",
-      "name": "src/fake-external-lib/index.ts",
-      "status": "passed",
-    },
-    {
-      "assertionResults": [],
-      "message": "No test found in suite src/fake-external-lib/nonNullable.ts",
-      "name": "src/fake-external-lib/nonNullable.ts",
-      "status": "passed",
-    },
-    {
-      "assertionResults": [],
-      "message": "No test found in suite src/fake-external-lib/typePredicates.ts",
-      "name": "src/fake-external-lib/typePredicates.ts",
-      "status": "passed",
-    },
-    {
-      "assertionResults": [],
-      "message": "No test found in suite src/helpers/Brand.ts",
-      "name": "src/helpers/Brand.ts",
-      "status": "passed",
-    },
-    {
-      "assertionResults": [],
-      "message": "No test found in suite src/helpers/type-utils.ts",
-      "name": "src/helpers/type-utils.ts",
-      "status": "passed",
     },
   ],
 }
