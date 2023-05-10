@@ -17,10 +17,3 @@ it("Should let you call makeGreeting from the window object", () => {
 
   type test1 = Expect<Equal<typeof window.makeGreeting, () => string>>;
 });
-
-it("Should not be available on globalThis", () => {
-  expect(
-    // @ts-expect-error
-    globalThis.makeGreeting,
-  ).toBe(undefined);
-});

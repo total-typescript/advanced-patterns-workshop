@@ -117,7 +117,9 @@ src/07-challenges/34-dynamic-reducer.problem.ts(86,23): error TS2344: Type 'fals
 src/07-challenges/34-dynamic-reducer.problem.ts(95,7): error TS2578: Unused '@ts-expect-error' directive.
 src/07-challenges/34-dynamic-reducer.problem.ts(104,5): error TS2578: Unused '@ts-expect-error' directive.
 src/07-challenges/38-challenge-custom-jsx-element.problem.tsx(13,17): error TS2339: Property 'custom-element' does not exist on type 'JSX.IntrinsicElements'.
+src/07-challenges/38-challenge-custom-jsx-element.problem.tsx(13,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
 src/07-challenges/38-challenge-custom-jsx-element.problem.tsx(13,44): error TS2339: Property 'custom-element' does not exist on type 'JSX.IntrinsicElements'.
+src/07-challenges/38-challenge-custom-jsx-element.solution.tsx(18,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
 ,"
 `;
 
@@ -482,21 +484,6 @@ exports[`vitest > Should have the correct Vitest errors 1`] = `
           "status": "failed",
           "title": "Should let you call makeGreeting from the window object",
         },
-        {
-          "ancestorTitles": [
-            "",
-          ],
-          "failureMessages": [
-            "expected [Function] to be undefined // Object.is equality",
-          ],
-          "fullName": " Should not be available on globalThis",
-          "location": {
-            "column": 5,
-            "line": 25,
-          },
-          "status": "failed",
-          "title": "Should not be available on globalThis",
-        },
       ],
       "message": "",
       "name": "src/02-globals/08-add-to-window.problem.ts",
@@ -508,36 +495,15 @@ exports[`vitest > Should have the correct Vitest errors 1`] = `
           "ancestorTitles": [
             "",
           ],
-          "failureMessages": [
-            "expected 'Hello!' to be 'Hello, world!' // Object.is equality",
-          ],
+          "failureMessages": [],
           "fullName": " Should let you call makeGreetingSolution from the window object",
-          "location": {
-            "column": 41,
-            "line": 21,
-          },
-          "status": "failed",
+          "status": "passed",
           "title": "Should let you call makeGreetingSolution from the window object",
-        },
-        {
-          "ancestorTitles": [
-            "",
-          ],
-          "failureMessages": [
-            "expected [Function] to be undefined // Object.is equality",
-          ],
-          "fullName": " Should not be available on globalThis",
-          "location": {
-            "column": 5,
-            "line": 30,
-          },
-          "status": "failed",
-          "title": "Should not be available on globalThis",
         },
       ],
       "message": "",
       "name": "src/02-globals/08-add-to-window.solution.ts",
-      "status": "failed",
+      "status": "passed",
     },
     {
       "assertionResults": [

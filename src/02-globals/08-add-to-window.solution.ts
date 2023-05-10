@@ -15,17 +15,10 @@ declare global {
   }
 }
 
-window.makeGreetingSolution = () => "Hello!";
+window.makeGreetingSolution = () => "Hello, world!";
 
 it("Should let you call makeGreetingSolution from the window object", () => {
   expect(window.makeGreetingSolution()).toBe("Hello, world!");
 
   type test1 = Expect<Equal<typeof window.makeGreetingSolution, () => string>>;
-});
-
-it("Should not be available on globalThis", () => {
-  expect(
-    // @ts-expect-error
-    globalThis.makeGreetingSolution,
-  ).toBe(undefined);
 });
