@@ -117,9 +117,7 @@ src/07-challenges/34-dynamic-reducer.problem.ts(86,23): error TS2344: Type 'fals
 src/07-challenges/34-dynamic-reducer.problem.ts(95,7): error TS2578: Unused '@ts-expect-error' directive.
 src/07-challenges/34-dynamic-reducer.problem.ts(104,5): error TS2578: Unused '@ts-expect-error' directive.
 src/07-challenges/38-challenge-custom-jsx-element.problem.tsx(13,17): error TS2339: Property 'custom-element' does not exist on type 'JSX.IntrinsicElements'.
-src/07-challenges/38-challenge-custom-jsx-element.problem.tsx(13,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
 src/07-challenges/38-challenge-custom-jsx-element.problem.tsx(13,44): error TS2339: Property 'custom-element' does not exist on type 'JSX.IntrinsicElements'.
-src/07-challenges/38-challenge-custom-jsx-element.solution.tsx(18,17): error TS17004: Cannot use JSX unless the '--jsx' flag is provided.
 ,"
 `;
 
@@ -1554,15 +1552,9 @@ exports[`vitest > Should have the correct Vitest errors 1`] = `
           "ancestorTitles": [
             "",
           ],
-          "failureMessages": [
-            "expected { username: 'awdawdawd', password: '' } to deeply equal { username: 'foo', password: 'bar' }",
-          ],
+          "failureMessages": [],
           "fullName": " Should return the new state after LOG_IN",
-          "location": {
-            "column": 17,
-            "line": 78,
-          },
-          "status": "failed",
+          "status": "passed",
           "title": "Should return the new state after LOG_IN",
         },
         {
@@ -1595,7 +1587,7 @@ exports[`vitest > Should have the correct Vitest errors 1`] = `
       ],
       "message": "",
       "name": "src/07-challenges/34-dynamic-reducer.solution.ts",
-      "status": "failed",
+      "status": "passed",
     },
   ],
 }

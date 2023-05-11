@@ -7,7 +7,7 @@ type PayloadsToDiscriminatedUnion<T extends Record<string, any>> = {
 
 export class DynamicReducer<
   TState,
-  TPayloadMap extends Record<string, any> = {}
+  TPayloadMap extends Record<string, any> = {},
 > {
   private handlers = {} as Record<
     string,
@@ -16,7 +16,7 @@ export class DynamicReducer<
 
   addHandler<TType extends string, TPayload extends object>(
     type: TType,
-    handler: (state: TState, payload: TPayload) => TState
+    handler: (state: TState, payload: TPayload) => TState,
   ): DynamicReducer<TState, TPayloadMap & Record<TType, TPayload>> {
     this.handlers[type] = handler;
 
@@ -25,7 +25,7 @@ export class DynamicReducer<
 
   reduce(
     state: TState,
-    action: PayloadsToDiscriminatedUnion<TPayloadMap>
+    action: PayloadsToDiscriminatedUnion<TPayloadMap>,
   ): TState {
     const handler = this.handlers[action.type];
     if (!handler) {
@@ -49,7 +49,7 @@ const reducer = new DynamicReducer<State>()
         username: action.username,
         password: action.password,
       };
-    }
+    },
   )
   .addHandler("LOG_OUT", () => {
     return {
@@ -69,19 +69,19 @@ it("Should return the new state after LOG_IN", () => {
     { username: "", password: "" },
     {
       type: "UPDATE_USERNAME",
-      username: "awdawdawd",
-    }
+      username: "new-password",
+    },
   );
 
   type test = [Expect<Equal<typeof state, State>>];
 
-  expect(state).toEqual({ username: "foo", password: "bar" });
+  expect(state).toEqual({ username: "new-password", password: "" });
 });
 
 it("Should return the new state after LOG_OUT", () => {
   const state = reducer.reduce(
     { username: "foo", password: "bar" },
-    { type: "LOG_OUT" }
+    { type: "LOG_OUT" },
   );
 
   type test = [Expect<Equal<typeof state, State>>];
@@ -95,7 +95,7 @@ it("Should error if you pass it an incorrect action", () => {
     {
       // @ts-expect-error
       type: "NOT_ALLOWED",
-    }
+    },
   );
 });
 
@@ -105,6 +105,6 @@ it("Should error if you pass an incorrect payload", () => {
     // @ts-expect-error
     {
       type: "LOG_IN",
-    }
+    },
   );
 });
