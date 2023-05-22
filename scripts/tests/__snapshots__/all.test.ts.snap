@@ -1345,8 +1345,7 @@ exports[`vitest > Should have the correct Vitest errors 1`] = `
     },
     {
       "assertionResults": [],
-      "message": "Transform failed with 1 error:
-/Users/matt/repos/ts/advanced-patterns-workshop/src/06-identity-functions/27-const-annotations.solution.1.ts:3:30: ERROR: Expected \\">\\" but found \\"T\\"",
+      "message": "No test found in suite src/06-identity-functions/27-const-annotations.solution.1.ts",
       "name": "src/06-identity-functions/27-const-annotations.solution.1.ts",
       "status": "passed",
     },
@@ -1373,16 +1372,34 @@ exports[`vitest > Should have the correct Vitest errors 1`] = `
       "status": "passed",
     },
     {
-      "assertionResults": [],
-      "message": "Transform failed with 1 error:
-/Users/matt/repos/ts/advanced-patterns-workshop/src/06-identity-functions/28-constraints-with-const-annotations.solution.1.ts:9:35: ERROR: Expected \\">\\" but found \\"TFruits\\"",
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "",
+          ],
+          "failureMessages": [],
+          "fullName": " Should ONLY let you pass an array of fruits",
+          "status": "passed",
+          "title": "Should ONLY let you pass an array of fruits",
+        },
+      ],
+      "message": "",
       "name": "src/06-identity-functions/28-constraints-with-const-annotations.solution.1.ts",
       "status": "passed",
     },
     {
-      "assertionResults": [],
-      "message": "Transform failed with 1 error:
-/Users/matt/repos/ts/advanced-patterns-workshop/src/06-identity-functions/28-constraints-with-const-annotations.solution.2.ts:5:8: ERROR: Expected \\">\\" but found \\"TFruits\\"",
+      "assertionResults": [
+        {
+          "ancestorTitles": [
+            "",
+          ],
+          "failureMessages": [],
+          "fullName": " Should ONLY let you pass an array of fruits",
+          "status": "passed",
+          "title": "Should ONLY let you pass an array of fruits",
+        },
+      ],
+      "message": "",
       "name": "src/06-identity-functions/28-constraints-with-const-annotations.solution.2.ts",
       "status": "passed",
     },
@@ -1448,8 +1465,7 @@ exports[`vitest > Should have the correct Vitest errors 1`] = `
     },
     {
       "assertionResults": [],
-      "message": "Transform failed with 1 error:
-/Users/matt/repos/ts/advanced-patterns-workshop/src/07-challenges/32-narrow-with-arrays.solution.ts:8:32: ERROR: Expected \\">\\" but found \\"TFruits\\"",
+      "message": "No test found in suite src/07-challenges/32-narrow-with-arrays.solution.ts",
       "name": "src/07-challenges/32-narrow-with-arrays.solution.ts",
       "status": "passed",
     },
