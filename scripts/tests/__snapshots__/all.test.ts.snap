@@ -17,14 +17,11 @@ src/01-branded-types/06-index-signatures.problem.ts(59,3): error TS2578: Unused 
 src/02-globals/07-add-function-to-global-scope.problem.ts(20,12): error TS7017: Element implicitly has an 'any' type because type 'typeof globalThis' has no index signature.
 src/02-globals/07-add-function-to-global-scope.problem.ts(21,12): error TS7017: Element implicitly has an 'any' type because type 'typeof globalThis' has no index signature.
 src/02-globals/07-add-function-to-global-scope.problem.ts(24,10): error TS2304: Cannot find name 'myFunc'.
-src/02-globals/07-add-function-to-global-scope.problem.ts(25,23): error TS2344: Type 'false' does not satisfy the constraint 'true'.
 src/02-globals/07-add-function-to-global-scope.problem.ts(25,36): error TS2304: Cannot find name 'myFunc'.
 src/02-globals/07-add-function-to-global-scope.problem.ts(29,10): error TS2304: Cannot find name 'myVar'.
-src/02-globals/07-add-function-to-global-scope.problem.ts(30,23): error TS2344: Type 'false' does not satisfy the constraint 'true'.
 src/02-globals/07-add-function-to-global-scope.problem.ts(30,36): error TS2304: Cannot find name 'myVar'.
 src/02-globals/08-add-to-window.problem.ts(13,8): error TS2339: Property 'makeGreeting' does not exist on type 'Window & typeof globalThis'.
 src/02-globals/08-add-to-window.problem.ts(16,17): error TS2339: Property 'makeGreeting' does not exist on type 'Window & typeof globalThis'.
-src/02-globals/08-add-to-window.problem.ts(18,23): error TS2344: Type 'false' does not satisfy the constraint 'true'.
 src/02-globals/08-add-to-window.problem.ts(18,43): error TS2339: Property 'makeGreeting' does not exist on type 'Window & typeof globalThis'.
 src/02-globals/09-adding-to-process-env.problem.ts(23,24): error TS2344: Type 'false' does not satisfy the constraint 'true'.
 src/02-globals/10-event-dispatcher.problem.1.ts(36,19): error TS2322: Type '\\"LOG_OUT\\"' is not assignable to type '\\"LOG_IN\\"'.
@@ -49,7 +46,6 @@ src/03-type-predicates-assertion-functions/15-type-predicates-with-generics.prob
 src/03-type-predicates-assertion-functions/16-brands-and-type-predicates.problem.ts(35,23): error TS2345: Argument of type 'PasswordValues' is not assignable to parameter of type 'Valid<PasswordValues>'.
 src/03-type-predicates-assertion-functions/17-brands-and-assertion-functions.problem.ts(34,21): error TS2345: Argument of type 'PasswordValues' is not assignable to parameter of type 'Valid<PasswordValues>'.
 src/04-classes/17.8-classes-as-types-and-value.problem.ts(12,17): error TS18046: 'error' is of type 'unknown'.
-src/04-classes/17.8-classes-as-types-and-value.problem.ts(14,22): error TS2344: Type 'false' does not satisfy the constraint 'true'.
 src/04-classes/17.8-classes-as-types-and-value.problem.ts(14,35): error TS18046: 'error' is of type 'unknown'.
 src/04-classes/18-type-predicates-and-classes.problem.ts(41,23): error TS2344: Type 'false' does not satisfy the constraint 'true'.
 src/04-classes/18.2-assertion-functions-and-classes.problem.ts(26,25): error TS2344: Type 'false' does not satisfy the constraint 'true'.
@@ -89,13 +85,9 @@ src/06-identity-functions/30.5-reverse-mapped-types.problem.ts(8,11): error TS70
 src/06-identity-functions/30.5-reverse-mapped-types.problem.ts(11,24): error TS2344: Type 'false' does not satisfy the constraint 'true'.
 src/06-identity-functions/30.5-reverse-mapped-types.problem.ts(13,11): error TS7006: Parameter 'name' implicitly has an 'any' type.
 src/06-identity-functions/30.5-reverse-mapped-types.problem.ts(16,24): error TS2344: Type 'false' does not satisfy the constraint 'true'.
-src/07-challenges/31-merge-dynamic-object-with-global.problem.ts(13,10): error TS2344: Type 'false' does not satisfy the constraint 'true'.
 src/07-challenges/31-merge-dynamic-object-with-global.problem.ts(13,30): error TS2339: Property 'add' does not exist on type 'Window & typeof globalThis'.
-src/07-challenges/31-merge-dynamic-object-with-global.problem.ts(14,10): error TS2344: Type 'false' does not satisfy the constraint 'true'.
 src/07-challenges/31-merge-dynamic-object-with-global.problem.ts(14,30): error TS2339: Property 'subtract' does not exist on type 'Window & typeof globalThis'.
-src/07-challenges/31-merge-dynamic-object-with-global.problem.ts(15,10): error TS2344: Type 'false' does not satisfy the constraint 'true'.
 src/07-challenges/31-merge-dynamic-object-with-global.problem.ts(15,30): error TS2339: Property 'multiply' does not exist on type 'Window & typeof globalThis'.
-src/07-challenges/31-merge-dynamic-object-with-global.problem.ts(16,10): error TS2344: Type 'false' does not satisfy the constraint 'true'.
 src/07-challenges/31-merge-dynamic-object-with-global.problem.ts(16,30): error TS2339: Property 'divide' does not exist on type 'Window & typeof globalThis'.
 src/07-challenges/32-narrow-with-arrays.problem.ts(10,35): error TS18046: 'fruit' is of type 'unknown'.
 src/07-challenges/32-narrow-with-arrays.problem.ts(31,1): error TS2578: Unused '@ts-expect-error' directive.
@@ -112,8 +104,6 @@ src/07-challenges/34-dynamic-reducer.problem.ts(52,36): error TS2558: Expected 0
 src/07-challenges/34-dynamic-reducer.problem.ts(55,5): error TS2345: Argument of type '(state: unknown, action: { username: string; password: string; }) => { username: string; password: string; }' is not assignable to parameter of type '(state: unknown, payload: unknown) => unknown'.
   Types of parameters 'action' and 'payload' are incompatible.
     Type 'unknown' is not assignable to type '{ username: string; password: string; }'.
-src/07-challenges/34-dynamic-reducer.problem.ts(75,23): error TS2344: Type 'false' does not satisfy the constraint 'true'.
-src/07-challenges/34-dynamic-reducer.problem.ts(86,23): error TS2344: Type 'false' does not satisfy the constraint 'true'.
 src/07-challenges/34-dynamic-reducer.problem.ts(95,7): error TS2578: Unused '@ts-expect-error' directive.
 src/07-challenges/34-dynamic-reducer.problem.ts(104,5): error TS2578: Unused '@ts-expect-error' directive.
 src/07-challenges/38-challenge-custom-jsx-element.problem.tsx(13,17): error TS2339: Property 'custom-element' does not exist on type 'JSX.IntrinsicElements'.
