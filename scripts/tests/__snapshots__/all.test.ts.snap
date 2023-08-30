@@ -461,21 +461,15 @@ exports[`vitest > Should have the correct Vitest errors 1`] = `
           "ancestorTitles": [
             "",
           ],
-          "failureMessages": [
-            "expected 'Hello!' to be 'Hello, world!' // Object.is equality",
-          ],
+          "failureMessages": [],
           "fullName": " Should let you call makeGreeting from the window object",
-          "location": {
-            "column": 33,
-            "line": 16,
-          },
-          "status": "failed",
+          "status": "passed",
           "title": "Should let you call makeGreeting from the window object",
         },
       ],
       "message": "",
       "name": "src/02-globals/08-add-to-window.problem.ts",
-      "status": "failed",
+      "status": "passed",
     },
     {
       "assertionResults": [
