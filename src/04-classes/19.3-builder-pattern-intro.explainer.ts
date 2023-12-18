@@ -18,6 +18,12 @@ export class BuilderTuple<TList extends any[] = []> {
 
     return this as any;
   }
+
+  pop(): BuilderTuple<TList extends [...infer TListNew, any] ? TListNew : never> {
+    this.list.pop();
+
+    return this as any;
+  }
 }
 
 const builderBeforePush = new BuilderTuple();
