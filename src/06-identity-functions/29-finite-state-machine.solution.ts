@@ -1,7 +1,8 @@
-import { F } from "ts-toolbelt";
+// Before 5.4
+type NoInfer<T> = [T][T extends any ? 0 : never];
 
 interface FSMConfig<TState extends string> {
-  initial: F.NoInfer<TState>;
+  initial: NoInfer<TState>;
   states: Record<
     TState,
     {
