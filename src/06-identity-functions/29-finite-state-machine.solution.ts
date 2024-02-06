@@ -1,3 +1,4 @@
+// Before 5.4
 type NoInfer<T> = [T][T extends any ? 0 : never];
 
 interface FSMConfig<TState extends string> {
