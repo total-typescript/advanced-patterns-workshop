@@ -1,6 +1,11 @@
 import { expect, it } from "vitest";
 import { Equal, Expect } from "../helpers/type-utils";
 
+declare global {
+  function myFunc(): boolean;
+  var myVar: number;
+}
+
 /**
  * Clues:
  *
