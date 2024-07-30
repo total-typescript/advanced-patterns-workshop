@@ -38,13 +38,17 @@ it("Should let you add users and posts to the db by their id", () => {
     name: "Miles",
   };
 
-  const post = db[postId];
-  const user = db[userId];
+  const test = () => {
+    // Code slightly updated since video was recorded, see
+    // https://gist.github.com/mattpocock/ac5bc4eabcb95c05d5d106ccb73c84cc
+    const post = db[postId];
+    const user = db[userId];
 
-  type tests = [
-    Expect<Equal<typeof post, Post>>,
-    Expect<Equal<typeof user, User>>,
-  ];
+    type tests = [
+      Expect<Equal<typeof post, Post>>,
+      Expect<Equal<typeof user, User>>,
+    ];
+  };
 });
 
 it("Should fail if you try to add a user under a post id", () => {
