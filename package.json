@@ -1,8 +1,8 @@
 {
-  "name": "typescript-generics-workshop",
+  "name": "advanced-patterns-workshop",
   "version": "1.0.0",
   "main": "index.js",
-  "author": "Matt Pocock <mattpocockvoice@gmail.com>",
+  "author": "Matt Pocock <team@totaltypescript.com>",
   "license": "GPL-2.0",
   "devDependencies": {
     "@total-typescript/exercise-cli": "^0.10.0",
@@ -111,7 +111,9 @@
     "e-19.4": "tt-cli run 19.4",
     "s-19.4": "tt-cli run 19.4 --solution",
     "e-22.5": "tt-cli run 22.5",
-    "s-22.5": "tt-cli run 22.5 --solution"
+    "s-22.5": "tt-cli run 22.5 --solution",
+    "e-30.6": "tt-cli run 30.6",
+    "s-30.6": "tt-cli run 30.6 --solution"
   },
   "dependencies": {
     "@types/express": "^4.17.14",
